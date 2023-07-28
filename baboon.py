@@ -20,6 +20,7 @@ x = tf.nn.avg_pool(y_reshaped, (1, 2, 2, 1), strides=(1, 2, 2, 1), padding='VALI
 
 # Convert the tensor to a numpy array
 x_np = tf.reshape(x, x.shape[1:3]).numpy()
+print(x_np.shape)
 
 # Normalize the array to 0-255
 x_np = (x_np - np.min(x_np)) / (np.max(x_np) - np.min(x_np)) * 255

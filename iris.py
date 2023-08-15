@@ -12,3 +12,16 @@ x = iris_df[["sepal_length", "sepal_width", "petal_width", "petal_length"]]
 x = x - x.mean(axis=0)
 y = tf.one_hot(iris_df["label"], depth=3)
 print(y)
+
+
+from tensorflow.keras.layers import Dense
+from tensorflow.keras.models import Sequential
+import tensorflow.keras.backend as K
+
+K.clear_session()
+model = Sequential([
+    Dense(32, activation='relu', input_shape=(4,)),
+    Dense(16, activation='relu'),
+    Dense(3, activation='softmax')
+])
+

@@ -2,3 +2,4 @@ numpy
 tensorflow
 Pillow
 pandas
+keras
